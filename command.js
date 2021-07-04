@@ -1,4 +1,5 @@
-(user, parts) => {
+const diceRegex = /((?<sign>\-|\+)?\s*)((?<count>\d+)?d(?<size>\d+)|(?<modifier>\d+))/g
+const command = (user, parts) => {
     const username = user["display-name"]
     if (parts.length === 0) {
         send(`@${username} throw me a frickin die here`)
@@ -36,3 +37,5 @@
         `@${username} rolled ${total} (${diceResults})`
     )
 }
+
+register(command)
