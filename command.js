@@ -27,7 +27,7 @@ const rollDice = (info) => {
 }
 
 const command = (commandInfo) => {
-    const {user, settings, parts, say} = commandInfo
+    const {user, settings, parts} = commandInfo
     const username = user["display-name"]
     if (parts.length === 0) {
         send(`@${username} throw me a frickin die here`)
@@ -62,9 +62,9 @@ const command = (commandInfo) => {
         .reduce(sum)
     console.log("rolled", total)
 
-    say(
-        `@${username} rolled ${total} (${diceResults})`
-    )
+    return {
+        say: `@${username} rolled ${total} (${diceResults})`
+    }
 }
 
 export default command
