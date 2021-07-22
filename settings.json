@@ -1,3 +1,6 @@
 {
-  "maxSize": 100
+  "maxSize": {
+    "type": "number",
+    "initial": 100
+  }
 }
