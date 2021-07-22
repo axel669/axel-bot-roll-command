@@ -26,7 +26,8 @@ const rollDice = (info) => {
     }
 }
 
-const command = (user, parts) => {
+const command = (commandInfo) => {
+    const {user, settings, parts, say} = commandInfo
     const username = user["display-name"]
     if (parts.length === 0) {
         send(`@${username} throw me a frickin die here`)
@@ -59,10 +60,11 @@ const command = (user, parts) => {
             }
         )
         .reduce(sum)
+    console.log("rolled", total)
 
-    send(
+    say(
         `@${username} rolled ${total} (${diceResults})`
     )
 }
 
-register(command)
+return command
