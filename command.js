@@ -67,4 +67,4 @@ const command = (commandInfo) => {
     )
 }
 
-return command
+export default command
