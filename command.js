@@ -31,7 +31,7 @@ const command = (commandInfo) => {
     const username = user["display-name"]
     if (parts.length === 0) {
         return {
-            say: `@${username} throw me a frickin die here`)
+            say: `@${username} throw me a frickin die here`
         }
     }
 
