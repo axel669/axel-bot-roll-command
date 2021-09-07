@@ -30,7 +30,9 @@ const command = (commandInfo) => {
     const {user, settings, parts} = commandInfo
     const username = user["display-name"]
     if (parts.length === 0) {
-        send(`@${username} throw me a frickin die here`)
+        return {
+            say: `@${username} throw me a frickin die here`)
+        }
     }
 
     const rollInfo = Array.from(
