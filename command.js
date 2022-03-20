@@ -69,4 +69,5 @@ const command = (commandInfo) => {
     }
 }
 
+export const triggers = ["chat"]
 export default command
