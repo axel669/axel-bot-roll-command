@@ -26,12 +26,14 @@ const rollDice = (info) => {
     }
 }
 
-const command = (commandInfo) => {
-    const {user, settings, parts} = commandInfo
-    const username = user["display-name"]
+const command = (args) => {
+//     const {user, settings, parts} = commandInfo
+//     const username = user["display-name"]
+    const { parts } = args
     if (parts.length === 0) {
         return {
-            say: `@${username} throw me a frickin die here`
+            say: `throw me a frickin die here`,
+            reply: true
         }
     }
 
@@ -65,7 +67,8 @@ const command = (commandInfo) => {
     console.log("rolled", total)
 
     return {
-        say: `@${username} rolled ${total} (${diceResults})`
+        chat: `@${username} rolled ${total} (${diceResults})`,
+        reply: true
     }
 }
 
