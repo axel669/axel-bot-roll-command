@@ -30,10 +30,9 @@ const command = (args) => {
 //     const {user, settings, parts} = commandInfo
 //     const username = user["display-name"]
     const { parts, tags } = args
-    const username = tags.displayName
     if (parts.length === 0) {
         return {
-            say: `throw me a frickin die here`,
+            chat: `throw me a frickin die here`,
             reply: true
         }
     }
@@ -68,7 +67,8 @@ const command = (args) => {
     console.log("rolled", total)
 
     return {
-        chat: `@${username} rolled ${total} (${diceResults})`
+        chat: `rolled ${total} (${diceResults})`,
+        reply: true
     }
 }
 
